@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twilio Alert Template</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background-color: #ffffff;
+      border: 2px solid #cccccc;
+      border-radius: 10px;
+      margin: 50px auto;
+      padding: 20px;
+      width: 80%;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th {
+      background-color: #f2f2f2;
+      border: 1px solid #cccccc;
+      padding: 8px;
+      text-align: center;
+    }
+    td {
+      border: 1px solid #cccccc;
+      padding: 8px;
+      text-align: center;
+    }
+    h3 {
+      color: red;
+      display: block;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h3>Twilio Alert</h3>
+  <table>
+    <tbody>
+      <tr>
+        <td>Account SID</td>
+        <td>{{body.AccountSid}}</td>
+      </tr>
+      <tr>
+        <td>Timestamp</td>
+        <td>{{body.Timestamp}}</td>
+      </tr>
+      <tr>
+        <td>Error Code</td>
+        <td>{{body.Payload.error_code}}</td>
+      </tr>
+      <tr>
+        <td>Service SID</td>
+        <td>{{body.Payload.service_sid}}</td>
+      </tr>
+      <tr>
+        <td>Resource SID</td>
+        <td>{{body.Payload.resource_sid}}</td>
+      </tr>
+    </tbody>
+  </table>
+ 
+  <br>
+ 
+  <h4 style="text-decoration: underline; color: #000000;">Webhook Payload</h4>
+  <p style="white-space: pre-line; color: #000000;">{{body.Payload.webhook.response.body}}</p>
+ 
+  <a style=" background-color:#0056b3;
+      color:#ffffff;
+      border-radius: 5px;
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      width: 150px;
+      border:1px solid #333333;
+      border-width:1px;" href="https://console.twilio.com/us1/monitor/logs/debugger/errors/{{body.Sid}}">More Details</a>
+</div>
+</body>
+</html>
