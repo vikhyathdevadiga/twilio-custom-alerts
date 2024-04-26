@@ -24,3 +24,6 @@ To run the application, execute the following command:
 
 ```bash
 node app.js
+```
+
+For more information, check out the blog post - [Custom Twilio Alerting System using Express, MongoDB, and SendGrid](https://www.twilio.com/en-us/blog/custom-twilio-alerting-system-express-mongodb-sendgrid)
